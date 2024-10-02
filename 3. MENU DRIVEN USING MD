@@ -1,0 +1,26 @@
+Dim frmd As Form1
+Private Sub mnublue_Click()
+Me.ActiveForm.BackColor = vbBlue
+End Sub
+Private Sub mnucascade_Click()
+Me.Arrange vbCascade
+End Sub
+Private Sub mnugreen_Click()
+Me.ActiveForm.BackColor = vbGreen
+End Sub
+Private Sub mnuhorizontal_Click()
+Me.Arrange vbHorizontal
+End Sub
+Private Sub MDIForm_Load()
+mnucolor.Enabled = True
+End Sub
+Private Sub mnunew_Click()
+Set frmd = New Form1
+frmd.Show
+End Sub
+Private Sub mnured_Click()
+Me.ActiveForm.BackColor = vbRed
+End Sub
+Private Sub mnuvertical_Click()
+Me.Arrange vbVertical
+End Sub
