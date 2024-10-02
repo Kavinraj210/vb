@@ -1,0 +1,31 @@
+/*** 2. FIBONACCI SERIES & SUM OF N NUMBER ***/
+Form Design
+Coding
+Dim n, i As Integer
+Dim f1, f2, f3 As Single
+Private Sub cmdclear_Click()
+Text1 = ""
+List1.Clear
+End Sub
+Private Sub cmdexit_Click()
+End
+End Sub
+Private Sub cmdfab_Click()
+n = Val(Text1)
+f1 = -1
+f2 = 1
+For i = 1 To n
+f3 = f1 + f2
+List1.AddItem f3
+f1 = f2
+f2 = f3
+Next i
+End Sub
+Private Sub cmdsum_Click()
+n = Val(Text1)
+If n = 1 Then
+List1.AddItem 1
+Else
+List1.AddItem n * (n + 1) / 2
+End If
+End Sub
