@@ -1,0 +1,38 @@
+Dim SIGNE As String
+Dim old As Double
+Private Sub cmd_bs_Click()
+If Len(Text1.Text) > 0 Then
+Text1.Text = Left(Text1.Text, Len(Text1.Text) - 1)
+End If
+End Sub
+Private Sub cmd_c_Click()
+Call Form_Load
+End Sub
+Private Sub cmd_equ_Click()
+Select Case (SIGNE)
+Case Is = "+"
+Text1.Text = old + Val(Text1.Text)
+Case Is = "-"
+Text1.Text = old - Val(Text1.Text)
+Case Is = "*"
+Text1.Text = old * Val(Text1.Text)
+Case Is = "/"
+Text1.Text = old / Val(Text1.Text)
+End Select
+End Sub
+Private Sub cmd_no_Click(Index As Integer)
+Text1.Text = Text1.Text + cmd_no(Index).Caption
+If cmd_no(Index).Caption = "." Then cmd_no(10).Enabled = False
+End if
+End Sub
+Private Sub cmd_op_Click(Index As Integer)
+old = Val(Text1.Text)
+Text1.Text = Val(" ")
+SIGNE = cmd_op(Index).Caption
+cmd_no(10).Enabled = True
+End Sub
+Private Sub Form_Load()
+Text1.Text = Val(" ")
+old = 0
+cmd_no(10).Enabled = True
+End Sub
